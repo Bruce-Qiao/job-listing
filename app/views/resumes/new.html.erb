@@ -1,0 +1,20 @@
+<h3>提交履历到 <%= @job.title %></h3>
+
+<hr>
+
+<%= simple_form_for [@job, @resume] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :attachment %>
+    <%= f.submit "送出" %>
+<% end %>
+
+
+<!-- <div class="well">
+  <%= form_for [@job,@resume], html: {multipart: true} do |f| %>
+     <%= f.label :user_id %>
+     <%= f.text_field :user_id %>
+     <%= f.label :attachment %>
+     <%= f.file_field :attachment %>
+     <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div> -->
