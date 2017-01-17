@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
 
+
   def new
     @job=Job.find(params[:job_id])
     @resume=Resume.new
@@ -13,16 +14,11 @@ class ResumesController < ApplicationController
     @resume.user=current_user
 
     if @resume.save
-      redirect_to job_path(@job), notice: "The resume has been uploaded."
+      flash[:notice]="成功提交简历"
+      redirect_to job_path(@job)
     else
-      render "new"
+      render :new
     end
-  end
-
-  def destroy
-    @resume=Resume.find(params[:id])
-    @resume.destroy
-    redirect_to resumes_job_path, notice: "The resume has been deleted."
   end
 
   private
@@ -30,4 +26,5 @@ class ResumesController < ApplicationController
   def resume_params
     params.require(:resume).permit(:content, :attachment)
   end
+
 end

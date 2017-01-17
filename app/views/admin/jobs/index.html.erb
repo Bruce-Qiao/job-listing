@@ -5,21 +5,24 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>Visible</td>
         <td>Title</td>
         <td>Description</td>
         <td>Created at</td>
+        <td>Has many Resumes</td>
         </tr>
     </thead>
     <tbody>
       <% @jobs.each do |job| %>
          <tr>
 
-           <td><%= render_job_status(job) %></td>
+           <td>
+             <%= render_job_status(job) %>
 
-           <td><%= link_to(job.title,admin_job_path(job)) %></td>
+             <%= link_to(job.title,admin_job_path(job)) %>
+           </td>
            <td><%= job.description %></td>
            <td><%= job.created_at %></td>
+           <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
 
            <td>
                 <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
