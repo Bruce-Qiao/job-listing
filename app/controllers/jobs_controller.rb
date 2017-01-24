@@ -3,6 +3,8 @@ class JobsController < ApplicationController
  before_filter :authenticate_user! , only: [:new, :create, :update, :edit, :destroy]
  before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
 
+layout "user"
+
   def index
     @jobs=case params[:order]
           when 'by_lower_bound'

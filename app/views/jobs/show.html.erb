@@ -3,18 +3,30 @@
 
     <%= link_to("提交简历", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
 
-    <% if current_user && current_user == @job.user %>
-       <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right") %>
-    <% end %>
   </div>
-  <h2><%= "Job title:" %></h2>
-  <h2><%= @job.title %></h2>
-  --------------------------
-  <p><%= @job.description %></p>
-  --------------------------
-  <p><%= @job.wage_lower_bound %></p>
-  --------------------------
-  <p><%= @job.wage_upper_bound %></p>
-  --------------------------
-  <p><%= @job.contact_email %></p>
+
+  <table class="table table-boldered table-striped custab">
+    <tr>
+        <th width="25%"><%= "职位：" %></th>
+        <td><%= @job.title %></td>
+    <tr/>
+    <tr>
+        <th><%= "职位描述：" %></th>
+        <td><%= simple_format(@job.description) %></td>
+    <tr/>
+    <tr>
+      <th><%= "薪资下限：" %></th>
+      <td><%= @job.wage_lower_bound %></td>
+    <tr/>
+    <tr>
+      <th><%= "薪资上限：" %></th>
+      <td><%= @job.wage_upper_bound %></td>
+    <tr/>
+    <tr>
+      <th><%= "联系方式：" %></th>
+      <td><%= @job.contact_email %></td>
+    </tr>
+  </table>
+
+
 </div>
