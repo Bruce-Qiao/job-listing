@@ -36,7 +36,7 @@
   background-image: url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 10px;
+  padding-bottom: 300px;
 }
 
 .title{
@@ -58,4 +58,16 @@
   margin-bottom: 60px;
   text-align: center;
   color: white;
+}
+
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
 }
