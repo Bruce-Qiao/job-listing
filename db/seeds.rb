@@ -18,7 +18,7 @@ create_account = User.create([email: 'admin@qianlima.com', password: '123456', p
 puts "Admin account created."
 
 create_jos = for i in 1..10 do
-  Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100, is_hidden: "false"])
+  Job.create!([User.first.id, title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100, is_hidden: "false"])
 end
 puts "10 Public jobs created."
 
