@@ -10,7 +10,7 @@ class Job < ApplicationRecord
     self.save
   end
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :resumes
   validates :title, presence: true
 
