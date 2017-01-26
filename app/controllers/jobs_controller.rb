@@ -14,6 +14,8 @@ layout "user"
           else
             Job.where(:is_hidden => false).order("created_at DESC")
           end
+
+    @jobs=@jobs.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
