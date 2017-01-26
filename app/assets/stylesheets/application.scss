@@ -36,8 +36,8 @@
   background-image: url('https://ww4.sinaimg.cn/large/006tNbRwgy1fc2ub29gz6j30qv0gw15p.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  // padding-left: 500px;
-  padding-bottom: 400px;
+  margin: 0 -15px 0px;
+  padding-bottom: 410px;
 }
 
 .title{
@@ -218,4 +218,25 @@
 .navbar-default .navbar-nav > .open > a:hover {
     background-color: #FFE0B2;
     color: #212121;
+}
+
+.btn-default {
+  color: #ffffff;
+  background-color: #464646;
+  border-color: inherit;
+  border-radius: 0;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #464646;
+  border-color: inherit;
+  border-radius: 0;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    color: #ffffff;
+    background-color: #000000;
 }

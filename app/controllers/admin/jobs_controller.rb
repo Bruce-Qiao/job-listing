@@ -6,6 +6,7 @@ class Admin::JobsController < ApplicationController
 
    def index
      @jobs=Job.all
+     @jobs=@jobs.paginate(:page => params[:page], :per_page => 10)
    end
 
    def show
@@ -43,7 +44,7 @@ class Admin::JobsController < ApplicationController
 
    def destroy
      @job=Job.find(params[:id])
-     
+
      @job.destroy
      flash[:alert]="Job deleted"
      redirect_to admin_jobs_path

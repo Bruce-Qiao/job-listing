@@ -1,9 +1,9 @@
 <div class="col-md-12">
-  <div class="job">
+  <div class="group">
     <%= link_to("添加职位", new_admin_job_path, class: "btn btn-primary pull-right") %>
   </div>
-  <table class="table table-boldered table-striped custab">
-    <thead>
+  <table class="table table-boldered table-striped table-hover custab">
+    <thead style="color:#ffffff; background-color:#464646">
       <tr>
         <td>职位</td>
         <td>职位描述</td>
@@ -39,5 +39,9 @@
       <% end %>
     </tbody>
   </table>
+
+  <div class="text-center">
+    <%= will_paginate @jobs %>
+  </div>
 
 </div>
